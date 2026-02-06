@@ -1,5 +1,4 @@
-def main():
-    print("Hello from az-reporter!")
+from az_reporter.cli import main
 
 
 if __name__ == "__main__":
