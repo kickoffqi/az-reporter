@@ -13,7 +13,7 @@ from .report import write_csv
 app = typer.Typer(no_args_is_help=True)
 
 
-.command()
+
 def version() -> None:
     """Print version."""
     typer.echo("az-reporter 0.1.0")
@@ -40,8 +40,12 @@ Resources
 | order by type asc
 """.strip()
 
-
 @app.command()
+def version_cmd() -> None:
+    """Print version."""
+    pass
+
+@app.command(no_args_is_help=True)
 def inventory(
     subs: str = typer.Option(..., "--subs", help="Comma-separated subscription IDs"),
     out: str = typer.Option("report.csv", "--out", help="Output CSV path"),
