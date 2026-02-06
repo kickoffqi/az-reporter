@@ -13,6 +13,13 @@ from .report import write_csv
 app = typer.Typer(no_args_is_help=True)
 
 
+.command()
+def version() -> None:
+    """Print version."""
+    typer.echo("az-reporter 0.1.0")
+
+
+
 def _setup_logging(level: str) -> None:
     logging.basicConfig(
         level=getattr(logging, level.upper(), logging.INFO),
